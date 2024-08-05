@@ -1,11 +1,11 @@
-import * as http from 'http';
+import * as httpType from 'http';
 
-const https  = require('node:http');
+import http from 'node:http';
 
 const hostname: string = '127.0.0.1';
 const port: number = 3000;
 
-const server = https.createServer((req: http.IncomingMessage, res: http.ServerResponse) => {
+const server: httpType.Server = http.createServer((req: httpType.IncomingMessage, res: httpType.ServerResponse) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
     res.end('hello, World!\n')
